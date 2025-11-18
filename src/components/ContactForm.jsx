@@ -27,14 +27,15 @@ const ContactForm = () => {
     setStatus(null);
 
     try {
+      // Build URL-encoded body (no CORS preflight issues)
+      const body = new URLSearchParams(formData).toString();
+
       const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
         },
-        // we send everything; script currently uses name/email/phone/message,
-        // but it will just ignore extra fields
-        body: JSON.stringify(formData),
+        body,
       });
 
       const result = await response.json();
