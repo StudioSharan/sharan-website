@@ -6,8 +6,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import ScrollToTop from "./ScrollToTop";
 import Navbar from "./components/Navbar";
 
-
-
+// Pages
 import Homepage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
 import AboutPage from "./pages/AboutPage";
@@ -19,22 +18,21 @@ import BlogPage from "./pages/BlogPage";
 import ElementsPage from "./pages/ElementsPage";
 import MaterialMixerApp from "./pages/Ai.jsx";
 
-
-
-// ✅ Import individual project pages
+// Individual project pages
 import MoiraGoa from "./projects/MoiraGoa.jsx";
 import SiolimGoa from "./projects/SiolimGoa.jsx";
-// ✅ Animation variants
+
+// Animation variants
 const pageVariants = {
   initial: { opacity: 0, y: 40 },
   animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -40 },
+  exit: { opacity: 0, y: -40 }
 };
 
 const navbarVariants = {
   initial: { y: 0, opacity: 1 },
   exit: { y: -80, opacity: 0 },
-  enter: { y: 0, opacity: 1 },
+  enter: { y: 0, opacity: 1 }
 };
 
 function App() {
@@ -44,7 +42,7 @@ function App() {
     <>
       <ScrollToTop />
 
-      {/* ✅ Navbar Animation */}
+      {/* Navbar Animation */}
       <AnimatePresence mode="wait">
         <motion.div
           key="navbar"
@@ -58,7 +56,7 @@ function App() {
         </motion.div>
       </AnimatePresence>
 
-      {/* ✅ Page Animation */}
+      {/* Page Animation */}
       <AnimatePresence mode="wait">
         <motion.div
           key={location.pathname}
@@ -80,9 +78,9 @@ function App() {
             <Route path="/elements" element={<ElementsPage />} />
             <Route path="/ai" element={<MaterialMixerApp />} />
 
-            {/* ✅ Individual Project Route */}
+            {/* Individual Project Routes */}
             <Route path="/projects/moira-goa" element={<MoiraGoa />} />
-            <Route path="/projects/siolim-goa" element={<MoiraGoa />} />
+            <Route path="/projects/siolim-goa" element={<SiolimGoa />} />
           </Routes>
         </motion.div>
       </AnimatePresence>
