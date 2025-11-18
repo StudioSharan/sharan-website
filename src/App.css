@@ -1,0 +1,77 @@
+/* App.css */
+
+/* Section container */
+.container-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background-color: #f9fafb; /* Tailwind's bg-gray-50 */
+}
+
+/* Inner container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+/* Section title */
+.section-title {
+  font-size: 2.25rem; /* text-4xl */
+  text-align: center;
+  margin-bottom: 3rem; /* mb-12 */
+  font-weight: bold;
+}
+
+/* Project grid layout */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Footer styling */
+.footer-style {
+  background-color: #111827; /* bg-gray-900 */
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 2.5rem;
+}
+
+/* General typography & scrollbar */
+html, body {
+  font-family: 'Montserrat', sans-serif;
+  background: #f9f9f9;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
